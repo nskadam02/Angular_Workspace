@@ -5,7 +5,7 @@
     <div class="col-8">
       <div class="div-margin">{{product.id}}</div>
       <div class="div-margin">{{product.name}}</div>
-      <div class="div-margin">{{product.price}}</div>
+      <div class="div-margin">{{product.price.value| currency:product.price.code}}</div>
       <button (click)="handleBuy($event)" class="btn btn-dark">Buy</button>
     </div>
     <ul class="nav nav-tabs">

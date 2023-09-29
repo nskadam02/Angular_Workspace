@@ -10,6 +10,7 @@ import { ReviewComponent } from './review/review.component';
 import { CartBadgeComponent } from './cart-badge/cart-badge.component';
 import { CartViewComponent } from './cart-view/cart-view.component';
 import { NttCardComponent } from './ntt-card/ntt-card.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NttCardComponent } from './ntt-card/ntt-card.component';
     ReviewComponent,
     CartBadgeComponent,
     CartViewComponent,
-    NttCardComponent
+    NttCardComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule, 
