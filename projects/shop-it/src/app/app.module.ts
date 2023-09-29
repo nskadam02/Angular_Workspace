@@ -11,6 +11,7 @@ import { CartBadgeComponent } from './cart-badge/cart-badge.component';
 import { CartViewComponent } from './cart-view/cart-view.component';
 import { NttCardComponent } from './ntt-card/ntt-card.component';
 import { HighlightDirective } from './highlight.directive';
+import { DiscountPipe } from './discount.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HighlightDirective } from './highlight.directive';
     CartBadgeComponent,
     CartViewComponent,
     NttCardComponent,
-    HighlightDirective
+    HighlightDirective,
+    DiscountPipe
   ],
   imports: [
     BrowserModule, 
