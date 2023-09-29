@@ -10,6 +10,11 @@ export class ProductComponent {
   product:any;
 
   currentTab:number= 1
+
+  reviews:Array<any>=[
+    {star:5,body:"Good product",author:"ns.kadam"},
+    {star:4,body:"Nice product",author:"ns.kadam"}
+  ]
   handleBuy(event:MouseEvent)
   {
     console.log(event)
@@ -22,5 +27,6 @@ export class ProductComponent {
   {
     return this.currentTab===tab;
   }
+  
 
 }
