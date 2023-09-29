@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-voting-item',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./voting-item.component.css']
 })
 export class VotingItemComponent {
+  @Input()
+  itemName!: string;
 
 }
