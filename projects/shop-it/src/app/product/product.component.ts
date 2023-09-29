@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  @Input()
+  @Input("value")
   product:any;
 
   currentTab:number= 1
