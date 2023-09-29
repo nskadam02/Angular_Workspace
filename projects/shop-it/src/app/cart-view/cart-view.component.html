@@ -1,6 +1,7 @@
-<div class="card">
-    <div class="card-header">Cart</div>
-    <div class="card-body">
+<app-ntt-card>
+    <div class="header">Cart View</div>
+    <!-- template reference -->
+    <div class="body" #cardBody> 
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -22,5 +23,8 @@
             </tbody>
         </table>
     </div>
+    <div class="footer">
+     NTT data @ 2023
+    </div>
 
-</div>
+</app-ntt-card>

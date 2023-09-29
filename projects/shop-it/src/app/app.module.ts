@@ -9,6 +9,7 @@ import { ProductComponent } from './product/product.component';
 import { ReviewComponent } from './review/review.component';
 import { CartBadgeComponent } from './cart-badge/cart-badge.component';
 import { CartViewComponent } from './cart-view/cart-view.component';
+import { NttCardComponent } from './ntt-card/ntt-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CartViewComponent } from './cart-view/cart-view.component';
     ProductComponent,
     ReviewComponent,
     CartBadgeComponent,
-    CartViewComponent
+    CartViewComponent,
+    NttCardComponent
   ],
   imports: [
     BrowserModule, 
