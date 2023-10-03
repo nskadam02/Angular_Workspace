@@ -13,12 +13,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let cartLine of cart;let idx=index">
+                <tr *ngFor="let cartLine of cart$|async;let idx=index">
                     <td>{{idx+1}}</td>
                     <td>{{cartLine.name}}</td>
-                    <td>{{cartLine.price}}</td>
+                    <td>{{cartLine.price.value}}</td>
                     <td>1</td>
-                    <td>{{1*cartLine.price}}</td>
+                    <td>{{1*cartLine.price.value}}</td>
                 </tr>
             </tbody>
         </table>

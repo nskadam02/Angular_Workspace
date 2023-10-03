@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import { CartService } from '../cart.service';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -6,30 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products :Array<any>=[{
-    id: 1,
-    name:"Laptop",
-    price:{
-      value:1000,
-      code:'INR'
-    },
-    img:"assets/Laptop.png",
-    isAvailable: true,
-    description:"Laptop with hight battery power",
-    specification:"1 TB HDD"
-  },
+  products :Array<any>=[]
+  constructor(private productService:ProductService)
   {
-    id: 2,
-    name:"Mobile",
-    price:{
-      value:2000,
-      code:'EUR'
-    },
-    img:"assets/Mobile.png",
-    isAvailable: true,
-    description:"Mobile with high battery power",
-    specification:"4 GB RAM"
+
   }
-]
+  ngOnInit()
+  {
+    this.products=this.productService.getProducts()
+  }
 
 }

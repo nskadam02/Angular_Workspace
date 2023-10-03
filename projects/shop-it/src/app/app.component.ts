@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shop-IT';
-  cart:Array<any> = [];
+  // :Array<any> = [];cart
   isCartOpen=false
   toggleCart()
   {

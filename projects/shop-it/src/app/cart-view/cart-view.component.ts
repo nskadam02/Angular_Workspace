@@ -1,4 +1,5 @@
 import { Component, ContentChild, ElementRef, Input, SimpleChanges, ViewChild } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-cart-view',
@@ -6,8 +7,10 @@ import { Component, ContentChild, ElementRef, Input, SimpleChanges, ViewChild } 
   styleUrls: ['./cart-view.component.css']
 })
 export class CartViewComponent {
-  @Input()
-  cart!: Array<any>;
+
+  cart: Array<any>=[];
+
+  cart$ = this.cartService.cart$;   //reference to stream
 
   @ViewChild("cardBody")
   cardBody!:ElementRef;
@@ -15,7 +18,7 @@ export class CartViewComponent {
   @ContentChild("comp")
   comp!:ElementRef
 
-  constructor()
+  constructor(private cartService:CartService)
   {
     console.log("cart view constructor")
   }
@@ -24,10 +27,12 @@ export class CartViewComponent {
     
     console.log("cart view chanages")
 
+
   }
   ngOnInit()
   {
     console.log("cart view oninit")
+    // this.cart=this.cartService.getCart()
   }
   
   ngAfterContentInit()

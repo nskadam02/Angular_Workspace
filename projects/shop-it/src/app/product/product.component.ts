@@ -1,15 +1,21 @@
 import { Component, Input } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
+  // providers: [CartService], // hirarcheal dependency injection
 })
 export class ProductComponent {
   @Input("value")
   product:any;
 
   currentTab:number= 1
+  constructor(private cartService:CartService) //dependency injection
+  {
+
+  }
 
   reviews:Array<any>=[
     {star:5,body:"Good product",author:"ns.kadam"},
@@ -17,7 +23,8 @@ export class ProductComponent {
   ]
   handleBuy(event:MouseEvent)
   {
-    console.log(event)
+    // const cartService=new CartService();
+    this.cartService.addToCart(this.product)
   }
   handleTabChnage(index:number)
   {
@@ -27,6 +34,7 @@ export class ProductComponent {
   {
     return this.currentTab===tab;
   }
+  
   
 
 }

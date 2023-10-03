@@ -12,6 +12,7 @@ import { CartViewComponent } from './cart-view/cart-view.component';
 import { NttCardComponent } from './ntt-card/ntt-card.component';
 import { HighlightDirective } from './highlight.directive';
 import { DiscountPipe } from './discount.pipe';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { DiscountPipe } from './discount.pipe';
     BrowserModule, 
     FormsModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
