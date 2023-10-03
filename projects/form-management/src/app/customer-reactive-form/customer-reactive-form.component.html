@@ -1,0 +1,100 @@
+<div class="card">
+    <div class="card-header">Customer-form</div>
+    <div class="card-body">
+        <!-- colllect in variable -->
+        <button type="button"  class="btn btn-dark">load customer</button>
+        <form [formGroup]="customerForm" >
+            <div class="form-group">
+                <label> Name</label>
+                <input class="form-control" formControlName="firstName"/>
+                <!-- <div *ngIf="customerForm.controls['firstName'].errors" class="text-danger">
+                    <div *ngIf = " customerForm.controls['firstName'].touched && customerForm.controls['firstName'].errors['required']">
+                        control is requied
+                    </div>
+                    <div *ngIf = "customerForm.controls['firstName'].touched && customerForm.controls['firstName'].errors['minlength']">
+                        Minlength is 3
+                    </div>
+
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label> Surname</label>
+                <!-- ngmodel crete form control -->
+                <input class="form-control"  formControlName="lastName"/>
+            </div>
+            <ng-container formGroupName="minAndMax">
+                <div class="form-group">
+                    <label> Min</label>
+                    <!-- ngmodel crete form control -->
+                    <input class="form-control"  formControlName="min"/>
+                </div>
+                <div class="form-group">
+                    <label> Max</label>
+                    <!-- ngmodel crete form control -->
+                    <input class="form-control"  formControlName="max"/>
+                </div>
+            </ng-container>
+            <div class="form-group">
+                <label> Email</label>
+                <!-- ngmodel crete form control -->
+                <input class="form-control"  formControlName="email"/>
+            </div>
+            <div class="form-group">
+                <label> Mobile</label>
+                <!-- ngmodel crete form control -->
+                <input class="form-control"  formControlName="mobile"/>
+            </div>
+            <div class="form-group">
+                <label> Notification</label>
+                <!-- ngmodel crete form control -->
+                <input type="radio"  formControlName="notiType" value="email" (change)="handleNotify('email')"/> Email
+                <input type="radio"  formControlName="notiType" value="sms" (change)="handleNotify('sms')"/> SMs
+            </div>
+            <hr/>
+            <div class="card">
+                <div class="card-header">Address</div>
+            
+
+            </div>
+
+            
+            <button class="btn btn-dark">Submit</button>
+            <hr/>
+
+            <div class="card">
+
+            </div>
+        </form>
+        <hr/>
+        <pre>
+
+            <!-- <hr/>
+            Form model
+            {{customerForm.value|json}}
+            customer model
+            {{customerModel| json}}
+            <hr/>
+            Form Group (customerform)
+            <hr/>
+            is pristine:{{customerForm.pristine}}
+            is dirty :{{customerForm.dirty}}
+            is valid :{{customerForm.valid}}
+            is invalid:{{customerForm.invalid}}
+            is touched:{{customerForm.touched}}
+            is untouched:{{customerForm.untouched}}
+
+            <hr/>
+            Form Control (customerform)
+            <hr/>
+            <!-- is pristine:{{customerForm.controls['lastName'].pristine}} -->
+            is dirty :{{customerForm.controls['lastName'].dirty}}
+            is valid :{{customerForm.controls['lastName'].valid}}
+            is invalid:{{customerForm.controls['lastName'].invalid}}
+            is touched:{{customerForm.controls['lastName'].touched}}
+            is untouched:{{customerForm.controls['lastName'].untouched}} -->
+
+        </pre>
+      
+
+    </div>
+</div>

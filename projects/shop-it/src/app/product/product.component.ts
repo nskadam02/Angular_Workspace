@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CartService } from '../cart.service';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product',
@@ -12,12 +13,12 @@ export class ProductComponent {
   product:any;
 
   currentTab:number= 1
-  constructor(private cartService:CartService) //dependency injection
+  constructor(private cartService:CartService , private productService:ProductService) //dependency injection
   {
 
   }
 
-  reviews:Array<any>=[
+  reviews:Array<any> | null=[
     {star:5,body:"Good product",author:"ns.kadam"},
     {star:4,body:"Nice product",author:"ns.kadam"}
   ]
@@ -29,6 +30,10 @@ export class ProductComponent {
   handleTabChnage(index:number)
   {
     this.currentTab = index;
+    if (this.currentTab===3)
+    {
+      this.reviews = this.productService.getReview(this.product.id);
+    }
   }
   isTabSelected(tab:number):boolean
   {

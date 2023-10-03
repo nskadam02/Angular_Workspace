@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-header">Customer-form</div>
+    <div class="card-body">
+        <!-- colllect in variable -->
+        <button type="button" (click)="loadCustomer()" class="btn btn-dark">load customer</button>
+        <form #customerForm="ngForm" (submit)="handleSubmit(customerForm)">  
+            <div class="form-group">
+                <label> Name</label>
+                <input class="form-control" [(ngModel)]="customerModel.firstName" minlength="3" name="firstName" required/>
+                <div *ngIf="customerForm.controls['firstName'].errors" class="text-danger">
+                    <div *ngIf = " customerForm.controls['firstName'].touched && customerForm.controls['firstName'].errors['required']">
+                        control is requied
+                    </div>
+                    <div *ngIf = "customerForm.controls['firstName'].touched && customerForm.controls['firstName'].errors['minlength']">
+                        Minlength is 3
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label> Surname</label>
+                <!-- ngmodel crete form control -->
+                <input class="form-control" [(ngModel)]="customerModel.lastName" name="lastName" required/>
+            </div>
+            <hr/>
+            <button class="btn btn-dark">Submit</button>
+            <hr/>
+
+        </form>
+        <hr/>
+        <pre>
+
+            <hr/>
+            Form model
+            {{customerForm.value|json}}
+            customer model
+            {{customerModel| json}}
+            <hr/>
+            Form Group (customerform)
+            <hr/>
+            is pristine:{{customerForm.pristine}}
+            is dirty :{{customerForm.dirty}}
+            is valid :{{customerForm.valid}}
+            is invalid:{{customerForm.invalid}}
+            is touched:{{customerForm.touched}}
+            is untouched:{{customerForm.untouched}}
+
+            <hr/>
+            Form Control (customerform)
+            <hr/>
+            <!-- is pristine:{{customerForm.controls['lastName'].pristine}} -->
+            is dirty :{{customerForm.controls['lastName'].dirty}}
+            is valid :{{customerForm.controls['lastName'].valid}}
+            is invalid:{{customerForm.controls['lastName'].invalid}}
+            is touched:{{customerForm.controls['lastName'].touched}}
+            is untouched:{{customerForm.controls['lastName'].untouched}}
+
+        </pre>
+      
+
+    </div>
+</div>

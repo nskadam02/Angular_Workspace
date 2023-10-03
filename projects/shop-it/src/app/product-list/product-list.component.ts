@@ -8,7 +8,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products :Array<any>=[]
+  products :Array<any> | null =[]
   constructor(private productService:ProductService)
   {
 

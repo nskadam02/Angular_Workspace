@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
 
-products:Array<any>=[{
+products:Array<any>=[
+  {
   id: 1,
   name:"Laptop",
   price:{
@@ -32,8 +33,12 @@ products:Array<any>=[{
 ]
   constructor() { }
 
-  getProducts():Array<any>
+  getProducts():Array<any> |null
   {
     return this.products
+  }
+  getReview(productId:number):Array<any> |null
+  {
+    return null
   }
 }
