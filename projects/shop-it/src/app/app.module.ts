@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
@@ -14,6 +14,7 @@ import { NttCardComponent } from './ntt-card/ntt-card.component';
 import { HighlightDirective } from './highlight.directive';
 import { DiscountPipe } from './discount.pipe';
 import { CartService } from './cart.service';
+import { ReviewFormComponent } from './review-form/review-form.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +27,14 @@ import { CartService } from './cart.service';
     CartViewComponent,
     NttCardComponent,
     HighlightDirective,
-    DiscountPipe
+    DiscountPipe,
+    ReviewFormComponent
   ],
   imports: [
     BrowserModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

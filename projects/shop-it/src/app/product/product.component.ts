@@ -18,7 +18,7 @@ export class ProductComponent {
 
   }
 
-  reviews:Array<any> | null=[
+  reviews:Array<any>=[
     {star:5,body:"Good product",author:"ns.kadam"},
     {star:4,body:"Nice product",author:"ns.kadam"}
   ]
@@ -30,14 +30,19 @@ export class ProductComponent {
   handleTabChnage(index:number)
   {
     this.currentTab = index;
-    if (this.currentTab===3)
-    {
-      this.reviews = this.productService.getReview(this.product.id);
-    }
+    // if (this.currentTab===3)
+    // {
+    //   this.reviews = this.productService.getReview(this.product.id);
+    // }
   }
   isTabSelected(tab:number):boolean
   {
     return this.currentTab===tab;
+  }
+  handleSubmitReview(event:any)
+  {
+    console.log(event)
+    this.reviews.push(event)
   }
   
   

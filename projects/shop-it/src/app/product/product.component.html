@@ -24,6 +24,7 @@
     <div *ngIf="isTabSelected(1)">{{product.description}}</div>
     <div *ngIf="isTabSelected(2)">{{product.specification}}</div>
     <div *ngIf="isTabSelected(3)"> 
+      <app-review-form (reviewFormEmitter)="handleSubmitReview($event)"></app-review-form>
       <div *ngFor="let review of reviews">
         <app-review [value]="review"></app-review>
       </div>
